@@ -3,25 +3,29 @@ import { ThemeContext } from "@contexts/ThemeContext";
 import { useContext } from "react";
 
 export default function Controller() {
-  const { toggleTheme, setDarkTheme, setLightTheme } = useContext(ThemeContext);
-  const { toggleLang } = useContext(LangContext);
+  const { theme,toggleTheme, setDarkTheme, setLightTheme } = useContext(ThemeContext);
+  const { lang,toggleLang } = useContext(LangContext);
   return (
     <div className="d-flex justify-content-center gap-2">
-      <button className="btn btn-secondary" onClick={setLightTheme}>
+      <button className="btn btn-secondary" onClick={setLightTheme} disabled = {theme.name==="light-theme"}>
         {/* Please update this text so it shows in EN or TH */}
-        Light
+        {lang.buttons.setLightTheme}
+        
       </button>
-      <button className="btn btn-dark" onClick={setDarkTheme}>
+      <button className="btn btn-dark" onClick={setDarkTheme } disabled = {theme.name==="drak-theme"}>
+        {lang.buttons.setDarkTheme}
         {/* Please update this text so it shows in EN or TH */}
-        Light Dark
+        
       </button>
       <button className="btn btn-primary" onClick={toggleTheme}>
+        {lang.buttons.toggleTheme}
         {/* Please update this text so it shows in EN or TH */}
-        Light Toggle Theme
+      
       </button>
       <button className="btn btn-danger" onClick={toggleLang}>
+        {lang.buttons.toggleLang}
         {/* Please update this text so it shows in EN or TH */}
-        Light Toggle Language
+       
       </button>
     </div>
   );
