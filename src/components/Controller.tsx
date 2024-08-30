@@ -7,12 +7,12 @@ export default function Controller() {
   const { lang,toggleLang } = useContext(LangContext);
   return (
     <div className="d-flex justify-content-center gap-2">
-      <button className="btn btn-secondary" onClick={setLightTheme} disabled = {theme.name==="light-theme"}>
+      <button className="btn btn-secondary" onClick={setLightTheme} disabled = {theme.name==="light"}>
         {/* Please update this text so it shows in EN or TH */}
         {lang.buttons.setLightTheme}
         
       </button>
-      <button className="btn btn-dark" onClick={setDarkTheme } disabled = {theme.name==="drak-theme"}>
+      <button className="btn btn-dark" onClick={setDarkTheme } disabled = {theme.name==="dark"}>
         {lang.buttons.setDarkTheme}
         {/* Please update this text so it shows in EN or TH */}
         
